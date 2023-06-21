@@ -21,12 +21,9 @@ const TaskForm = ({ list, setList }) => {
   };
 
   return (
-    <form onSubmit={submit}>
-      <label>
-        New Task:{' '}
-        <input type="text" value={formValues} onChange={handleChange} />
-      </label>
-      <button> Submit </button>
+    <form className="form" onSubmit={submit}>
+      <input type="text" value={formValues} onChange={handleChange} />
+      <button> Add Task </button>
     </form>
   );
 };

@@ -1,3 +1,5 @@
+# practice-todo
+
 Start with npm start
 
 read a list of tasks. ✓
@@ -11,4 +13,3 @@ delete any task, using the mouse or keyboard.
 edit any task, using the mouse or keyboard.
 
 ---- adding timing from a calendar later? ----
-# practice-todo

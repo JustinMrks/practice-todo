@@ -12,18 +12,14 @@ const Task = ({ id, list, setList }) => {
   return (
     <div className="taskHolder">
       <span className="task">{list[id].task}</span>
-      <form>
-        <label>
-          {' '}
-          <input
-            type="checkbox"
-            checked={list[id].completed}
-            onChange={() => {
-              toggleCheck(id);
-            }}
-          />{' '}
-        </label>
-      </form>
+
+      <input
+        type="checkbox"
+        checked={list[id].completed}
+        onChange={() => {
+          toggleCheck(id);
+        }}
+      />
     </div>
   );
 };

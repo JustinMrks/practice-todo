@@ -1,10 +1,87 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgb(182, 205, 224);
+  min-height: 100vh;
+}
+
+/* Task Form Styling */
+
+.form {
+  background-color: rgb(34, 39, 44);
+  display: flex;
+  padding: 10px;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form > input {
+  width: 75%;
+  padding: 8px;
+  font-size: 25px;
+}
+.form > button {
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  color: rgb(34, 39, 44);
+  background-color: rgb(210, 224, 235);
+}
+
+/* Task Styling */
+
+.taskHolder {
+  background-color: rgb(34, 39, 44);
+  display: flex;
+  padding: 10px;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskHolder > span {
+  width: 90%;
+  font-size: 30px;
+  color: rgb(255, 242, 227);
+}
+
+.taskHolder > input {
+  width: 10%;
+  height: 30px;
+}
+
+.taskHolder:nth-child(even) {
+  background: rgb(47, 54, 61);
+}
+
+@media (max-width: 600px) {
+  .taskHolder {
+    width: 90%;
+    padding: 8px;
+  }
+  .taskHolder > span {
+    font-size: 20px;
+  }
+  .form {
+    width: 90%;
+    padding: 8px;
+  }
+  .form > input {
+    font-size: 18px;
+    padding: 8px;
+  }
+  .form > button {
+    font-size: 15px;
+    padding: 3px;
+  }
 }
