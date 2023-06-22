@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Task from './Task';
 import TaskForm from './TaskForm';
 
@@ -8,7 +8,15 @@ const initialState = [
 ];
 
 const TaskList = () => {
-  const [list, setList] = useState(initialState);
+  const [list, setList] = useState(() => {
+    const localValue = localStorage.getItem('TASKS');
+    if (localValue == null) return initialState;
+    return JSON.parse(localValue);
+  });
+
+  useEffect(() => {
+    localStorage.setItem('TASKS', JSON.stringify(list));
+  }, [list]);
 
   return (
     <>
@@ -18,14 +26,24 @@ const TaskList = () => {
 
       {list.map((item) =>
         !item.completed ? (
-          <Task key={item.id} id={item.id} list={list} setList={setList} />
+          <Task
+            key={item.id + 'comp'}
+            id={item.id}
+            list={list}
+            setList={setList}
+          />
         ) : (
           <></>
         )
       )}
       {list.map((item) =>
         item.completed ? (
-          <Task key={item.id} id={item.id} list={list} setList={setList} />
+          <Task
+            key={item.id + 'incomp'}
+            id={item.id}
+            list={list}
+            setList={setList}
+          />
         ) : (
           <></>
         )
